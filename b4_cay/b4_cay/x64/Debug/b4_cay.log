@@ -1,0 +1,8 @@
+﻿  cay.cpp
+D:\CTDL\b4_cay\b4_cay\cay.cpp(9,2): warning C4091: 'typedef ': ignored on left of 'NODE' when no variable is declared
+D:\CTDL\b4_cay\b4_cay\cay.cpp(34,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CTDL\b4_cay\b4_cay\cay.cpp(37,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CTDL\b4_cay\b4_cay\cay.cpp(40,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CTDL\b4_cay\b4_cay\cay.cpp(43,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CTDL\b4_cay\b4_cay\cay.cpp(55,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  b4_cay.vcxproj -> D:\CTDL\b4_cay\x64\Debug\b4_cay.exe
