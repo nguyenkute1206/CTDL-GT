@@ -22,14 +22,14 @@ NODE* newNode(string data)
 	node->right = NULL;
 	return node;
 }
+
 bool checkNode(NODE *node)
 {
 	return node->left == NULL && node->right == NULL;
 }
 
-float tinhToan(string data, double x, double y)
+float tinhToan(string data, float x, float y)
 {
-	
 	if (data == "+"){
 		return x + y;
 	}                                 
@@ -44,20 +44,16 @@ float tinhToan(string data, double x, double y)
 	}
 	return 0;
 }
-float LNR(TREE root)
+float NLR(TREE root)
 {
-	if (root == NULL)
-	{
+	if (root == NULL){
 		return 0;
 	}
-	if (checkNode(root))
-	{
+	if (checkNode(root)){
 		return stod(root->data);
 	}
-	float a = LNR(root->left);
-	cout << "node a: " << a << endl;
-	float b = LNR(root->right);
-	cout << "node b: " << b << endl;
+	float a = NLR(root->left);
+	float b = NLR(root->right);
 	return tinhToan(root->data, a, b);
 }
 int main()
@@ -71,29 +67,31 @@ int main()
 
 	root->left->left = newNode("*");
 	root->left->right = newNode("+");
-	root->right->left = newNode("*");
-	root->right->right = newNode("6");
+	root->right->left = newNode("+");
+	root->right->right = newNode("/");
 
 	root->left->left->left = newNode("+");
-	root->left->left->right = newNode("3");
+	root->left->left->right = newNode("4");
 	root->left->right->left = newNode("-");
 	root->left->right->right = newNode("2");
-	root->right->left->left = newNode("3");
-	root->right->left->right = newNode("-");
+	root->right->left->left = newNode("*");
+	root->right->left->right = newNode("2");
+	root->right->right->left = newNode("8");
+	root->right->right->right = newNode("4");
 
-	root->left->left->left->left = newNode("-");
-	root->left->left->left->right = newNode("1");
-	root->left->right->left->left = newNode("9");
-	root->left->right->left->right = newNode("+");
-	root->right->left->right->left = newNode("7");
-	root->right->left->right->right = newNode("4");
+	root->left->left->left->left = newNode("/");
+	root->left->left->left->right = newNode("3");
+	root->left->right->left->left = newNode("7");
+	root->left->right->left->left = newNode("7");
+	root->left->right->left->right = newNode("5");
+	root->right->left->left->left = newNode("4");
+	root->right->left->left->right = newNode("/");
 
-	root->left->left->left->left->left = newNode("8");
+	root->left->left->left->left->left = newNode("3");
 	root->left->left->left->left->right = newNode("1");
-	root->left->right->left->right->left = newNode("2");
-	root->left->right->left->right->right = newNode("6");
+	root->right->left->left->right->left = newNode("6");
+	root->right->left->left->right->right = newNode("1");
 
-
-	cout << "ket qua: " << LNR(root) << endl;
+	cout << "ket qua: " << NLR(root) << endl;
 	return 0;
 }
